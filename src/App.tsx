@@ -78,7 +78,7 @@ export default function App() {
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       
       const history = messages.map(msg => ({
         role: msg.role === 'bot' ? 'model' : 'user',
