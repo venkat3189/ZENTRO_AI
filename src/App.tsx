@@ -78,7 +78,7 @@ export default function App() {
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       
       const history = messages.map(msg => ({
         role: msg.role === 'bot' ? 'model' : 'user',
@@ -89,7 +89,7 @@ export default function App() {
       }));
 
       const chat = ai.chats.create({
-        model: "gemini-3.1-pro-preview",
+        model: "gemini-3-flash-preview",
         history: history,
         config: {
           systemInstruction: "Your name is Zentro. You are a highly capable, accurate, and professional AI assistant. You have access to Google Search to provide up-to-date and verified information. Always prioritize accuracy and depth in your responses. If you are unsure, use your search tools. You can also help with coding, creative writing, and complex analysis. You are multimodal and can analyze images provided by the user.",
@@ -175,7 +175,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-4xl mx-auto bg-white shadow-2xl overflow-hidden sm:my-4 sm:h-[calc(100vh-2rem)] sm:rounded-2xl border border-zinc-200">
+    <div className="flex flex-col h-screen w-full bg-white overflow-hidden border-x border-zinc-200">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 border-bottom border-zinc-100 bg-white/80 backdrop-blur-md sticky top-0 z-10">
         <div className="flex items-center gap-3">
@@ -296,7 +296,7 @@ export default function App() {
 
       {/* Input Area */}
       <footer className="p-4 bg-white border-t border-zinc-100">
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="w-full space-y-4">
           {selectedImage && (
             <div className="relative inline-block">
               <img 
