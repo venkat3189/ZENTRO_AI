@@ -89,7 +89,7 @@ export default function App() {
       }));
 
       const chat = ai.chats.create({
-        model: "gemini-3-flash-preview",
+        model: "gemini-1.5-flash",
         history: history,
         config: {
           systemInstruction: "Your name is Zentro. You are a highly capable, accurate, and professional AI assistant. You have access to Google Search to provide up-to-date and verified information. Always prioritize accuracy and depth in your responses. If you are unsure, use your search tools. You can also help with coding, creative writing, and complex analysis. You are multimodal and can analyze images provided by the user.",
