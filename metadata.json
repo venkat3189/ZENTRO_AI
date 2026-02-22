@@ -1,0 +1,5 @@
+{
+  "name": "Zentro AI",
+  "description": "A clean, modern chatbot interface powered by Zentro (Gemini 3.1 Pro) for intelligent and responsive conversations.",
+  "requestFramePermissions": []
+}
